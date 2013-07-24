@@ -11,6 +11,7 @@ import weka.clusterers.SimpleKMeans;
 import weka.core.DistanceFunction;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.converters.ConverterUtils.DataSource;
 
 public class WekaKmeansDriver {
 
@@ -26,8 +27,9 @@ public class WekaKmeansDriver {
 
 			kmeans.setPreserveInstancesOrder(true);
 			kmeans.setNumClusters(numClusters);
-
-			weka.core.converters.ConverterUtils.DataSource source = new weka.core.converters.ConverterUtils.DataSource(new PropertyUtils().getProperty("datafiles-home")+"\\links.arff");
+			
+			String arffFile = new PropertyUtils().getProperty("datafiles-home")+"\\links.arff";
+			DataSource source = new DataSource(arffFile);
 			Instances instances = source.getDataSet();
 
 			//inst.setDataset(instances);
