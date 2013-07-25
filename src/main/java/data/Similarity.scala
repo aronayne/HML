@@ -4,7 +4,7 @@ import scala.PartialFunction.cond
 
 class Similarity {
   
-  def getJaccardCoefficient(number1 : List[Int] , number2 : List[Int]) = {
+  def getJaccardCoefficient(number1 : IndexedSeq[Int] , number2 : IndexedSeq[Int]) = {
     
     val p : Double =   number1.intersect(number2).size
     val q : Double = number1.zip(number2).filter(x => x._1==1 && x._2==0).size  

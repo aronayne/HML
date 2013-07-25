@@ -2,6 +2,6 @@ package data
 
 object CaseClasses {
   
-   case class User(id: String, jCoeff : Int) 
+   case class User(id: String, nCoordinate : Int) 
 
 }

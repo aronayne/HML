@@ -4,12 +4,14 @@ import java.util.Comparator;
 
 public class Cluster implements Comparable{
 	
-	private int instance;
+	private String id;
 	private int cluster;
-	
-	public Cluster(int instance, int cluster){
-		this.instance = instance;
+	private String instanceValue;
+
+	public Cluster(String id, int cluster, String attributeValue){
+		this.id = id;
 		this.cluster = cluster;
+		this.instanceValue = attributeValue;
 	}
 
 	@Override
@@ -26,12 +28,22 @@ public class Cluster implements Comparable{
 	}
 
 
-	public int getInstance() {
-		return instance;
+	public String getId() {
+		return id;
 	}
 
 	public int getCluster() {
 		return cluster;
 	}
+	
+	public String getInstanceValue() {
+		return instanceValue;
+	}
+	
+	@Override
+	public String toString(){
+		return "ID : "+this.id+" | Cluster Number "+this.cluster+" | Attribute "+this.instanceValue;
+	}
+	
 	
 }
